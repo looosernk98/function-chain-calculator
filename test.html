@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Two Nodes with Bézier Curve</title>
+  <style>
+    #node1, #node2 {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      position: absolute;
+    }
+    #node1 { top: 100px; left: 100px; }
+    #node2 { top: 300px; left: 400px; }
+    svg {
+      position: absolute;
+      pointer-events: none; /* Allows interaction with elements beneath the SVG */
+    }
+  </style>
+</head>
+<body>
+  <div id="node1">Node 1</div>
+  <div id="node2">Node 2</div>
+  
+  <!-- SVG to draw the Bézier curve -->
+  <svg id="connector" width="100%" height="100%">
+    <path id="bezierCurve" stroke="black" fill="transparent" stroke-width="2"/>
+  </svg>
+
+  <script>
+    function drawBezierCurve() {
+      const node1 = document.getElementById('node1');
+      const node2 = document.getElementById('node2');
+
+      // Get positions of nodes
+      const node1Rect = node1.getBoundingClientRect();
+      const node2Rect = node2.getBoundingClientRect();
+
+      // Calculate the starting and ending points of the curve
+      const startX = node1Rect.left + node1Rect.width / 2;
+      const startY = node1Rect.top + node1Rect.height / 2;
+      const endX = node2Rect.left + node2Rect.width / 2;
+      const endY = node2Rect.top + node2Rect.height / 2;
+
+      // Control points for the Bézier curve (you can adjust these to change the curve's shape)
+      const controlX1 = startX + 100; // Control point 1 X
+      const controlY1 = startY - 100; // Control point 1 Y
+      const controlX2 = endX - 100;   // Control point 2 X
+      const controlY2 = endY + 100;   // Control point 2 Y
+
+      // SVG path for a cubic Bézier curve
+      const pathData = `M ${startX} ${startY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${endX} ${endY}`;
+
+      // Set the path's `d` attribute to the calculated curve path
+      document.getElementById('bezierCurve').setAttribute('d', pathData);
+    }
+
+    // Call the function to draw the curve after the page loads
+    window.onload = drawBezierCurve;
+  </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+.equationCont {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 20px 20px;
+    width: 235px;
+    border-radius: 15px;
+    border: 1px solid #DFDFDF;
+    box-shadow: 0px 0px 6px 0px #0000000D;
+    height: 270px;
+}
+
+.funcName {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.funcName div {
+    display: flex;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    color: #A5A5A5;
+}
+
+.funcName img {
+    max-width: 12px;
+    max-height: 12px;
+    height: auto;
+    width: auto;
+    display: flex;
+}
+
+.equation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 4px;
+    position: relative;
+}
+
+.equation label {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.52px;
+    color: #252525;
+}
+
+.equation input {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.52px;
+    color: #252525;
+    border-radius: 8px;
+    border: 1px solid #D3D3D3;
+    width: 100%;
+    height: 33px;
+    padding: 0px 10px
+}
+
+.equation input:focus {
+    border-color: #D3D3D3;
+    outline: none;
+}
+
+.next {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.next label {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.52px;
+    color: #252525;
+    height: 15px;
+}
+
+.next select {
+    border-radius: 8px;
+    border: 1px solid #D3D3D3;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.52px;
+    color: #252525;
+    height: 33px;
+    padding: 0px 10px
+}
+
+.next select:focus {
+    outline: none;
+}
+
+.next select:disabled,
+.exit>input:disabled {
+    background-color: #F8F8F8;
+    cursor: not-allowed;
+}
+
+.inOutContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.inOutContainer div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inOutContainer span {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12.1px;
+}
+
+.connector {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #DBDBDB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.connector div {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #66A3FF;
+}
+
+.entry,
+.exit {
+    border-radius: 12px;
+    border: 2px solid #FFC267;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.entry>input,
+.exit>input {
+    width: 60%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.entry>input {
+    border-radius: 12px 0px 0px 12px;
+    border-right: 1px solid #FFC267;
+}
+
+.exit>input {
+    border-radius: 0px 12px 12px 0px;
+    border-left: 1px solid #FFC267;
+}
+
+.conn-center {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.entry>input:focus {
+    outline: none;
+}
+
+.error-msg {
+    color: red;
+    position: absolute;
+    bottom: -35px;
+    font-size: 10px;
+}
+
+.entry-container,
+.exit-container {
+    width: 115px;
+    height: 80px;
+    position: absolute;
+}
+
+.entry-container {
+    top: calc(270px - 80px);
+    left: 0;
+}
+
+.exit-container {
+    top: calc(270px - 80px);
+    right: 0;
+}
+
+.entry-label,
+.exit-label {
+    border-radius: 20px;
+    color: #FFF;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.entry-label {
+    background-color: #E29A2D;
+}
+
+.exit-label {
+    background-color: #4CAF79;
+}
+
+.func1{
+    position: absolute;
+    left: 326px;
+    top:240px
+}
+.func2{
+    position: absolute;
+    left: 333px;
+    top: 240px;
+    z-index: 1;
+}
+.func4{
+    position: absolute;
+    left: 509px;
+    top: 597px;
+}
+.func5{
+    top: 241px;
+    position: absolute;
+    right: 279px;
+}
+
+.entry-container > img{
+ position: absolute;
+ bottom: 21.5px;
+ right: -39px;
+}
+.exit-container > img{
+    position: absolute;
+    bottom: 21.5px;
+    left: -40px;
+}
+
+.equationCont:last-child > .output{
+  margin-left: 10px;
+}
